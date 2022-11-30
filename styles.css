@@ -28,7 +28,9 @@ body {
 }
 
 nav {
-    border: 1px solid red;
+  height: 55px;
+  display: flex;
+  align-items: center;
 }
 
 button {
@@ -44,7 +46,7 @@ button {
   justify-content: space-between;
   margin: auto;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .container a {
@@ -56,16 +58,48 @@ button {
   list-style-type: none;
 }
 
-.drop-down {
-    display: none;
+.list:hover .drop-down {
+  display: block;
+  transition: 5s ease-in-out;
 }
 
-.home:hover .drop-down {
-    display: block;
+.drop-down {
+  display: none;
+  position: absolute;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
+  box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
+  top: 60px;
+  right: 50%;
+  transform: translate(50%);
+  padding: 16px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom: 2px solid var(--btc-blue);
+
 }
 
 .drop-down li {
+padding: 8px 16px;
+color: white;
+transition: 0.3s ease-in-out;
+white-space: nowrap;
+cursor: pointer;
+}
 
+.triangle {
+  width: 15px;
+  height: 15px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  top: -5px;
+}
+
+.drop-down li:hover {
+  color: var(--btc-blue);
+  cursor: pointer;
 }
 
 .nav-right {
@@ -77,11 +111,13 @@ button {
 }
 
 .nav-left .list {
-  padding: 16px;
+  padding: 17px;
+  position: relative;
 }
 
-.nav-left li:hover {
+.nav-left .list:hover {
   background-color: var(--btc-blue);
+  transition: 0.3s ease-in-out;
 }
 
 .nav-right-ul {
@@ -90,20 +126,16 @@ button {
 }
 
 .nav-right-ul .down-arrow {
-    position: absolute;
-    top: 3px;
-    width: 9px;
-    cursor: pointer;
+  width: 9px;
+  cursor: pointer;
 }
 
 .nav-right-corner {
   gap: 15px;
 }
 
-.nav-right-corner 
-
 .nav-right-corner .user {
-
+  border-radius: 50%;
 }
 
 .nav-right-corner .notification svg {
@@ -126,11 +158,112 @@ button {
 }
 
 .line {
-    height: 15px;
-border-left: 0.1px solid white;
-opacity: 0.2;
+  height: 15px;
+  border-left: 0.1px solid white;
+  opacity: 0.2;
 }
 
 .line-gap {
-    margin: 0 5px;
+  margin: 0 5px;
 }
+
+.menu-btn {
+  display: none;
+}
+
+.navicon {
+  cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 15px;
+  background: white;
+  position: relative;
+}
+
+.navicon::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: 10px;
+  border-radius: 15px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.navicon::after {
+  content: "";
+  border-radius: 15px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: -10px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-list {
+  display: none;
+}
+
+.menu-btn:checked ~ .menu-list {
+  display: block;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after,
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  top: 0;
+}
+
+.hamburger-menu {
+  width: 35px;
+  height: 3px;
+  display: none;
+}
+
+@media screen and (max-width: 1440px) {
+    .nav-right-ul, .notification, .user {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .nav-left .list {
+        padding: 16px 10px ;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-left-ul {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
