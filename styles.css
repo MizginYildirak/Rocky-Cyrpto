@@ -1,5 +1,136 @@
+:root {
+  --main-color: #141416;
+  --sections-color: #18191d;
+  --btc-blue: #3772ff;
+  --btc-red: #d33535;
+  --btc-red: #58bd7d;
+  --gray: #b1b5c3;
+  --on-surface: white;
+}
+
+/* ! RESET */
+
 * {
-    margin: 0;
-    padding: 0;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-color);
+  font-family: DM Sans, sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+    border: 1px solid red;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: var(--mainc-color);
+  color: var(--on-surface);
+  border: 1px solid var(--on-surface);
+  border-radius: 50px;
+}
+
+.container {
+  width: 97%;
+  justify-content: space-between;
+  margin: auto;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.container a {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+
+.container li {
+  list-style-type: none;
+}
+
+.drop-down {
+    display: none;
+}
+
+.home:hover .drop-down {
+    display: block;
+}
+
+.drop-down li {
+
+}
+
+.nav-right {
+  gap: 30px;
+}
+
+.nav-left {
+  gap: 50px;
+}
+
+.nav-left .list {
+  padding: 16px;
+}
+
+.nav-left li:hover {
+  background-color: var(--btc-blue);
+}
+
+.nav-right-ul {
+  gap: 35px;
+  position: relative;
+}
+
+.nav-right-ul .down-arrow {
+    position: absolute;
+    top: 3px;
+    width: 9px;
+    cursor: pointer;
+}
+
+.nav-right-corner {
+  gap: 15px;
+}
+
+.nav-right-corner 
+
+.nav-right-corner .user {
+
+}
+
+.nav-right-corner .notification svg {
+  height: 10px;
+}
+
+.nav-svg {
+  width: 16px;
+  color: var(--on-surface);
+  cursor: pointer;
+}
+
+.wallet {
+  cursor: pointer;
+}
+
+.wallet:hover {
+  color: var(--btc-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.line {
+    height: 15px;
+border-left: 0.1px solid white;
+opacity: 0.2;
+}
+
+.line-gap {
+    margin: 0 5px;
 }
