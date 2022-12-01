@@ -27,15 +27,18 @@ body {
   align-items: center;
 }
 
+/* navbar start */
+
 nav {
   height: 55px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 button {
   padding: 5px 10px;
-  background-color: var(--mainc-color);
+  background-color: var(--main-color);
   color: var(--on-surface);
   border: 1px solid var(--on-surface);
   border-radius: 50px;
@@ -44,7 +47,6 @@ button {
 .container {
   width: 97%;
   justify-content: space-between;
-  margin: auto;
   font-weight: bold;
   font-size: 15px;
 }
@@ -66,9 +68,9 @@ button {
 .drop-down {
   display: none;
   position: absolute;
-  -webkit-box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
-  -moz-box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
-  box-shadow: 0px 0px 25px 0px rgba(255,255,255,0.20);
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.2);
   top: 60px;
   right: 50%;
   transform: translate(50%);
@@ -76,15 +78,14 @@ button {
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom: 2px solid var(--btc-blue);
-
 }
 
 .drop-down li {
-padding: 8px 16px;
-color: white;
-transition: 0.3s ease-in-out;
-white-space: nowrap;
-cursor: pointer;
+  padding: 8px 16px;
+  color: white;
+  transition: 0.3s ease-in-out;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .triangle {
@@ -245,25 +246,119 @@ cursor: pointer;
   display: none;
 }
 
-@media screen and (max-width: 1440px) {
-    .nav-right-ul, .notification, .user {
-        display: none;
-    }
+/* navbar end */
+
+/* banner start */
+
+#banner {
+  background-color: var(--sections-color);
+  padding: 6rem 15rem 8rem;
+}
+
+.button {
+  padding: 15px 30px;
+  background-color: #3772ff;
+  border: none;
+  margin: 3rem 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h2,
+h6 {
+  color: var(--on-surface);
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+}
+
+p {
+  color: var(--gray);
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+#banner .banner-container .banner-left {
+  flex: 1;
+}
+
+#banner .banner-container .banner-right {
+  flex: 1;
+}
+
+#banner .banner-container .banner-left .title {
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  color: var(--on-surface);
+}
+
+#banner .banner-container .banner-left .partners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+#banner .banner-container .banner-left p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+#banner .banner-container .banner-left .our-partners {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1440px) {
-    .nav-left .list {
-        padding: 16px 10px ;
-    }
+  .nav-right-ul,
+  .notification,
+  .user {
+    display: none;
+  }
+
+  #banner {
+    padding: 6rem 1rem 8rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .nav-left .list {
+    padding: 16px 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #banner {
+    padding: 6rem 1rem 8rem;
+  }
+
+  .banner-container {
+    flex-direction: column;
+  }
+
+  .partners {
+    justify-content: space-between;
+  }
+
+  #banner .banner-container .banner-right .banner-image {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .nav-left-ul {
-        display: none;
-    }
+  .nav-left-ul {
+    display: none;
+  }
 
-    .hamburger-menu {
-        display: block;
-    }
+  .hamburger-menu {
+    display: block;
+  }
 }
-
