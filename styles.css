@@ -3,7 +3,7 @@
   --sections-color: #18191d;
   --btc-blue: #3772ff;
   --btc-red: #d33535;
-  --btc-red: #58bd7d;
+  --btc-greem: #58bd7d;
   --gray: #b1b5c3;
   --on-surface: white;
 }
@@ -78,6 +78,7 @@ button {
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom: 2px solid var(--btc-blue);
+  background-color: var(--main-color);
 }
 
 .drop-down li {
@@ -219,24 +220,24 @@ button {
   display: none;
 }
 
-.menu-btn:checked ~ .menu-list {
+.menu-btn:checked~.menu-list {
   display: block;
 }
 
-.menu-btn:checked ~ .menu-icon .navicon {
+.menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:before {
+.menu-btn:checked~.menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
+.menu-btn:checked~.menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:after,
-.menu-btn:checked ~ .menu-icon .navicon:before {
+.menu-btn:checked~.menu-icon .navicon:after,
+.menu-btn:checked~.menu-icon .navicon:before {
   top: 0;
 }
 
@@ -257,11 +258,38 @@ button {
 
 .button {
   padding: 15px 30px;
-  background-color: #3772ff;
   border: none;
+  position: relative;
   margin: 3rem 0;
+  color: white;
+  background-color: #3772ff;
   font-size: 15px;
+  text-decoration: none;
   font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(-250%) skewX(-30deg);
+  transition: transform 0.7s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(200%) skewX(-30deg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--on-surface);
 }
 
 h2 {
@@ -317,7 +345,128 @@ p {
   margin-bottom: 20px;
 }
 
+/* banner end */
+
+/* coin-container start */
+
+#crypto {
+  background-color: var(--main-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.coin-container {
+  max-width: 1440px;
+  width: 100%;
+  color: var(--on-surface);
+  background-color: var(--sections-color);
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #23262f;
+  border-radius: 25px;
+  margin-top: -61px;
+}
+
+.coin-title {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.coin-title .coins {
+  color: white;
+  cursor: pointer;
+  list-style-type: none;
+  padding: 5px 20px;
+  font-weight: 600;
+}
+
+.coin-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  gap: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.coin-bottom::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: #23262f;
+  top: 0px;
+  width: 100%;
+}
+
+.coin-bottom-parts {
+  padding: 31px 40px;
+  background-color: var(--main-color);
+  width: calc(25% - 20px);
+  border-radius: 12px;
+  color: var(--on-surface);
+}
+
+.coins-blue {
+  background-color: var(--btc-blue);
+  border-radius: 100px;
+}
+
+.coin-img {
+  display: flex;
+  gap: 5px;
+}
+
+.dollars {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.coin-price {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.decrease {
+  background-color: var(--btc-red);
+  border: none;
+}
+
+.increase {
+  background-color: var(--btc-greem);
+  border: none;
+}
+
+.coin-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.coin-name:hover {
+  color: var(--btc-blue);
+  transition: 0.3s ease-in-out;
+}
+
+.top-part {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 @media screen and (max-width: 1440px) {
+
   .nav-right-ul,
   .notification,
   .user {
@@ -351,6 +500,10 @@ p {
   #banner .banner-container .banner-right .banner-image {
     width: 100%;
   }
+
+  .coin-bottom-parts {
+    width: calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -360,5 +513,11 @@ p {
 
   .hamburger-menu {
     display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .coin-bottom-parts {
+    width: 100%;
   }
 }
