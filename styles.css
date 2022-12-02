@@ -220,24 +220,24 @@ button {
   display: none;
 }
 
-.menu-btn:checked~.menu-list {
+.menu-btn:checked ~ .menu-list {
   display: block;
 }
 
-.menu-btn:checked~.menu-icon .navicon {
+.menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
 
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after {
+.menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after,
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:after,
+.menu-btn:checked ~ .menu-icon .navicon:before {
   top: 0;
 }
 
@@ -297,6 +297,7 @@ h2 {
 }
 
 h2,
+h3,
 h6 {
   color: var(--on-surface);
   font-family: DM Sans;
@@ -465,8 +466,99 @@ p {
   gap: 10px;
 }
 
-@media screen and (max-width: 1440px) {
+/* coin-container end */
 
+/* table start */
+
+.market-container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 100px 0 59px;
+}
+
+.market-container .market .market-top .update {
+  font-size: 48px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table .tr {
+  width: 100%;
+  border-bottom: 2px solid #979494;
+  text-align: left;
+}
+
+.market-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.market-title {
+  display: flex;
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 9px;
+  padding: 20px 24px 40px;
+  color: var(--on-surface);
+}
+
+.market-title .title-item {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 9px;
+  padding: 8px 24px;
+}
+
+.market-cap,
+.market-price,
+.market-name,
+.market-number,
+.market-star,
+.market-trade {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.market-row {
+  height: 90px;
+  border-bottom: 1px solid #23262f;
+}
+
+.market-row {
+}
+
+.market-rate-decrease {
+  color: var(--btc-red);
+  font-size: 16px;
+}
+
+.market-rate-increase {
+  color: var(--btc-greem);
+  font-size: 16px;
+}
+
+.market-coins-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 90px;
+}
+
+.market-trade {
+}
+
+.table-title {
+  color: var(--gray);
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1440px) {
   .nav-right-ul,
   .notification,
   .user {
