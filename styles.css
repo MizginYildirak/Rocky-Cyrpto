@@ -220,24 +220,24 @@ button {
   display: none;
 }
 
-.menu-btn:checked~.menu-list {
+.menu-btn:checked ~ .menu-list {
   display: block;
 }
 
-.menu-btn:checked~.menu-icon .navicon {
+.menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
 
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after {
+.menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after,
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:after,
+.menu-btn:checked ~ .menu-icon .navicon:before {
   top: 0;
 }
 
@@ -635,22 +635,66 @@ p {
 
 /* work start */
 
+#work {
+  background-color: var(--sections-color);
+  padding: 5rem 0;
+}
+
 .work-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 1440px;
+  max-width: 1440px;
   margin: auto;
 }
 
 .work-container .steps {
-display: flex;
+  display: flex;
 }
 
-@media screen and (max-width: 1440px) {
+.title-top {
+  font-size: 48px;
+}
 
+.title-fs {
+  font-size: 20px;
+  margin: 16px 0 50px;
+}
+
+.steps {
+  display: flex;
+  gap: 40px;
+}
+
+.step {
+  letter-spacing: 1px;
+  width: 22%;
+  position: relative;
+}
+
+.work-sub-title {
+  padding: 10px 0 15px;
+}
+
+.work-line {
+  position: absolute;
+  top: 40px;
+  right: -30%;
+}
+
+.step-item {
+  transition: 0.5s all ease-in-out;
+}
+
+.step-item:hover {
+  transform: rotateY(-360deg);
+}
+
+/* work end */
+
+@media screen and (max-width: 1440px) {
   .nav-right-ul,
   .notification,
   .user {
@@ -697,6 +741,10 @@ display: flex;
   .coin-bottom-parts {
     width: calc(50% - 20px);
   }
+
+  .work-line {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -729,5 +777,18 @@ display: flex;
 
   .market-container .market .market-top .update {
     font-size: 32px;
+  }
+
+  #work {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .steps {
+    flex-wrap: wrap;
+  }
+
+  .steps .step {
+    width: 100%;
   }
 }
