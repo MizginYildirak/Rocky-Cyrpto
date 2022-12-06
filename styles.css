@@ -220,24 +220,24 @@ button {
   display: none;
 }
 
-.menu-btn:checked~.menu-list {
+.menu-btn:checked ~ .menu-list {
   display: block;
 }
 
-.menu-btn:checked~.menu-icon .navicon {
+.menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
 
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after {
+.menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked~.menu-icon .navicon:after,
-.menu-btn:checked~.menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:after,
+.menu-btn:checked ~ .menu-icon .navicon:before {
   top: 0;
 }
 
@@ -987,8 +987,51 @@ p.step-item {
 
 /* customers end */
 
-@media screen and (max-width: 1440px) {
+/* sale start */
 
+#sale {
+  background-color: var(--sections-color);
+  padding: 2rem 0;
+}
+
+.sale-container {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  color: var(--on-surface);
+}
+
+.sale-container h4 {
+  font-size: 30px;
+}
+
+.discover {
+  color: white;
+}
+
+.sale-container button {
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background-color: var(--on-surface);
+  color: var(--sections-color);
+}
+
+.sale-container button:hover {
+  background-color: var(--main-color);
+  color: var(--on-surface);
+  transition: all 0.3s ease-in-out;
+}
+
+.sale-container h4 {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1440px) {
   .nav-right-ul,
   .notification,
   .user {
@@ -1099,6 +1142,10 @@ p.step-item {
   .credential {
     margin-bottom: 2rem;
   }
+
+  .sale-container {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1117,6 +1164,12 @@ p.step-item {
 
   #banner .banner-container .banner-left .partners {
     width: 100%;
+  }
+
+  .sale-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
   }
 }
 
