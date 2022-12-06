@@ -330,8 +330,11 @@ li {
 .banner-container {
   display: flex;
   justify-content: center;
-  gap: 90px;
   max-width: 1440px;
+}
+
+.banner-center {
+  width: 85%;
 }
 
 #banner .banner-container .banner-left {
@@ -342,9 +345,9 @@ li {
   flex: 1;
 }
 
-#banner .banner-container .banner-right img {
-  width: 100%;
-}
+/* #banner .banner-container .banner-right img {
+  width: 90%;
+} */
 
 #banner .banner-container .banner-left .title {
   line-height: 1;
@@ -745,7 +748,6 @@ p.step-item {
 }
 
 #comp .comp-container .comp-right p {
-  margin-bottom: 0px;
   font-size: 20px;
 }
 
@@ -826,6 +828,165 @@ p.step-item {
   color: var(--main-color);
 }
 
+/* comp end */
+
+/* can start */
+
+#scan {
+  background-color: var(--sections-color);
+  padding-top: 5rem;
+}
+
+.scan-container {
+  max-width: 1440px;
+  display: flex;
+  margin: auto;
+}
+
+.scan-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.scan-right {
+  flex: 1;
+  position: relative;
+}
+
+.scan-right img {
+  width: 100%;
+}
+
+#scan .scan-container .scan-left .scan-list h6 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#scan .scan-container .scan-left .scan-list li {
+  margin-bottom: 24px;
+}
+
+#scan .scan-container .scan-left h6 {
+  margin-bottom: 10px;
+}
+
+#scan .scan-container .scan-left p {
+  font-size: 20px;
+}
+
+#scan .scan-container .scan-left .scan-list i {
+  font-size: 12px;
+  padding: 5px;
+  background-color: var(--btc-blue);
+  border-radius: 50%;
+  color: var(--main-color);
+}
+
+#scan .scan-container .scan-right .download {
+  padding: 10px 20px;
+  color: white;
+  position: absolute;
+  top: 70px;
+  font-weight: 600;
+}
+
+#scan .scan-container .scan-left .scan-apps {
+  display: flex;
+  gap: 15px;
+}
+
+/* scan end */
+
+/* customers start */
+
+#customers {
+  padding: 5rem 0;
+  background-color: var(--main-color);
+}
+
+.customers-container {
+  max-width: 1440px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+#customers .customers-container .customers-right .customers-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 45px 41px 52px;
+  background-color: var(--sections-color);
+  border-left: 15px solid var(--btc-blue);
+  border-radius: 20px;
+}
+
+#customers .customers-container .customers-left .customers-images {
+  display: flex;
+  gap: 10px;
+}
+
+#customers .customers-container .customers-left .customer {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+#customers .customers-container .customers-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-right: 250px;
+}
+
+#customers .customers-container .customers-right {
+  flex: 3;
+}
+
+#customers .customers-container .customers-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#customers .customers-container .customers-right .director {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+#customers .customers-container .customers-right .director img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#customers .customers-container .customers-left .plus {
+  color: var(--btc-blue);
+}
+
+#customers .customers-container .customers-left span {
+  color: var(--on-surface);
+}
+
+#customers .customers-container .customers-right .customers-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.customers-bottom-left {
+  display: flex;
+  gap: 15px;
+}
+
+/* customers end */
+
 @media screen and (max-width: 1440px) {
 
   .nav-right-ul,
@@ -871,6 +1032,10 @@ p.step-item {
     width: 100%;
   }
 
+  #banner .banner-container .banner-right {
+    margin: auto;
+  }
+
   .coin-bottom-parts {
     width: calc(50% - 20px);
   }
@@ -890,6 +1055,49 @@ p.step-item {
   .comp-right {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .scan-container {
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #customers {
+    padding-left: 15px;
+    padding-left: 15px;
+  }
+
+  .customers-container {
+    flex-direction: column;
+  }
+
+  .customers-comment {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 48px 40px !important;
+  }
+
+  .customers-bottom {
+    flex-direction: column;
+  }
+
+  #customers .customers-container .customers-left {
+    margin-right: 0 !important;
+    margin-top: 2rem;
+  }
+
+  .credential h6 {
+    font-size: 20px;
+    padding-bottom: 7px;
+  }
+
+  .credential p {
+    font-size: 12px;
+  }
+
+  .credential {
+    margin-bottom: 2rem;
   }
 }
 
@@ -913,6 +1121,10 @@ p.step-item {
 }
 
 @media screen and (max-width: 768px) {
+  h2 {
+    font-size: 40px;
+  }
+
   .coin-bottom-parts {
     width: 100%;
   }
