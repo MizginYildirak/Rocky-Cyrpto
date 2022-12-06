@@ -220,24 +220,24 @@ button {
   display: none;
 }
 
-.menu-btn:checked ~ .menu-list {
+.menu-btn:checked~.menu-list {
   display: block;
 }
 
-.menu-btn:checked ~ .menu-icon .navicon {
+.menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:before {
+.menu-btn:checked~.menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
+.menu-btn:checked~.menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked ~ .menu-icon .navicon:after,
-.menu-btn:checked ~ .menu-icon .navicon:before {
+.menu-btn:checked~.menu-icon .navicon:after,
+.menu-btn:checked~.menu-icon .navicon:before {
   top: 0;
 }
 
@@ -321,6 +321,10 @@ h6 {
 
 p {
   color: var(--gray);
+}
+
+li {
+  list-style-type: none;
 }
 
 .banner-container {
@@ -716,15 +720,13 @@ p.step-item {
 .comp-container {
   max-width: 1440px;
   display: flex;
+  align-items: center;
   margin: auto;
   gap: 100px;
 }
 
 .comp-left {
-  display: flex;
   flex: 1;
-  max-width: 800px;
-  overflow: scroll;
 }
 
 .comp-right {
@@ -784,33 +786,48 @@ p.step-item {
 
 .compicon1 {
   position: absolute;
-  left: 50px;
-  top: 140px;
+  left: 10%;
+  top: 20%;
 }
 
 .compicon2 {
   position: absolute;
-  left: 200px;
+  left: 30%;
 }
 
 .compicon3 {
   position: absolute;
-  left: 600px;
-  top: 50px;
+  left: 80%;
+  top: 15%;
 }
 
 .compicon4 {
   position: absolute;
-  top: 320px;
+  top: 70%;
 }
 
 .compicon5 {
   position: absolute;
-  left: 590px;
-  top: 350px;
+  left: 80%;
+  top: 80%;
+}
+
+.comp-list h6 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comp-list li i {
+  font-size: 12px;
+  padding: 5px;
+  background-color: var(--btc-blue);
+  border-radius: 50%;
+  color: var(--main-color);
 }
 
 @media screen and (max-width: 1440px) {
+
   .nav-right-ul,
   .notification,
   .user {
@@ -867,19 +884,13 @@ p.step-item {
   }
 
   .comp-left {
-    display: flex;
-    margin: auto;
-    width: 100%;
     flex: 1;
-    max-width: 750px;
-    overflow: scroll;
   }
 
   .comp-right {
-   padding-left: 15px;
-   padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -908,6 +919,10 @@ p.step-item {
 
   .table {
     overflow: auto;
+  }
+
+  .comp6 {
+    width: 100%;
   }
 
   .market-container .market .market-top .update {
