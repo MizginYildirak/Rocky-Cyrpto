@@ -978,6 +978,7 @@ p.step-item {
 
 #customers .customers-container .customers-right .customers-bottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
