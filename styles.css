@@ -293,7 +293,6 @@ a {
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -312,6 +311,8 @@ h6 {
 
 h2,
 h3,
+h4,
+h5,
 h6 {
   color: var(--on-surface);
   font-family: DM Sans;
@@ -1031,6 +1032,166 @@ p.step-item {
   margin-bottom: 10px;
 }
 
+/* sale end */
+
+/* rockie start */
+
+#rockie {
+  border-top: 1px solid #d8d8da20;
+}
+
+.rockie-container {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.products,
+.services {
+}
+
+.rockie-middle {
+  display: flex;
+  flex: 1;
+  padding: 4rem 2rem;
+  border-right: 1px solid #d8d8da20;
+  border-left: 1px solid #d8d8da20;
+}
+
+.products,
+.services,
+.rockie-left,
+.rockie-right {
+  flex: 1;
+}
+
+.rockie-middle li {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.rockie-middle a:hover {
+  color: var(--btc-blue);
+}
+
+.products {
+  padding-left: 60px;
+}
+
+.services {
+  padding-left: 10px;
+}
+
+.rockie-title {
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  margin-bottom: 20px;
+}
+
+.rockie-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 4rem 0;
+  padding-right: 110px;
+}
+
+.rockie-text {
+  max-width: 300px;
+}
+
+.rockie-right {
+  padding: 3rem 0 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rockie-right i {
+  font-size: 24px;
+  color: var(--gray);
+  margin-right: 20px;
+}
+
+.rockie-right i:hover {
+  color: var(--btc-blue);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rockie-right h4 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.input-group {
+  margin: 1rem 0;
+  width: 350px;
+  height: 45px;
+  border-radius: 30px;
+  display: flex;
+  background-color: var(--on-surface);
+  padding: 5px;
+}
+
+.input-group:focus {
+  border: 1px solid var(--btc-blue);
+}
+
+.input-group input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 11px;
+}
+
+.submit {
+  width: 9rem;
+  padding: 8px 0;
+  position: relative;
+  border: none;
+  color: white;
+  background-color: #3772ff;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(-250%) skewX(-30deg);
+  transition: transform 0.7s ease-in-out;
+}
+
+.submit:hover::before {
+  transform: translateX(200%) skewX(-30deg);
+}
+
+/* rockie end */
+
+/* footer start */
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #d8d8da20;
+  padding: 1rem 0;
+}
+
 @media screen and (max-width: 1440px) {
   .nav-right-ul,
   .notification,
@@ -1145,6 +1306,35 @@ p.step-item {
 
   .sale-container {
     padding: 0 15px;
+  }
+
+  .rockie-container {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  .rockie-middle,
+  .rockie-right,
+  .products {
+    padding-left: 0;
+  }
+
+  .rockie-middle {
+    padding: 0;
+  }
+
+  .products {
+    padding-right: 100px;
+    flex: none;
+  }
+
+  .footer-bottom {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .input-group {
+    width: 100%;
   }
 }
 
